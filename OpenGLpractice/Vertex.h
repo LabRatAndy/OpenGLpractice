@@ -18,8 +18,8 @@ public:
 	void SetNormal(const glm::vec3 normal);
 	void SetTexCoords(const glm::vec2 texcoords);
 private:
-	Vertex(const Vertex& copy) = delete;
-	Vertex operator=(const Vertex& assignee) = delete;
+//	Vertex(const Vertex& copy) = delete;
+//	Vertex operator=(const Vertex& assignee) = delete;
 	glm::vec3 Position;
 	glm::vec3 Normal;
 	glm::vec2 TexCoords;

@@ -6,11 +6,13 @@
 #include "mesh.h"
 #include "Vertex.h"
 #include<glm/glm.hpp>
+void ErrorReport(int error, const char* description);
 
 int main(int* argc, char* argv)
 {
 	//initialise glfw
 	glfwInit();
+	glfwSetErrorCallback(ErrorReport);
 	std::cout << "hello world" << std::endl;
 	Vertex vertices[] = { Vertex(glm::vec3(-0.5,-0.5,0.0)),Vertex(glm::vec3(0.0,0.5,0.0)),Vertex(glm::vec3(0.5,-0.5,0.0)) };
 	Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]));
@@ -28,4 +30,8 @@ int main(int* argc, char* argv)
 
 	glfwTerminate();
 	return 0;
+}
+void ErrorReport(int error, const char* description)
+{
+	std::cerr << "GLFW error: " << error << " " << description << std::endl;
 }
