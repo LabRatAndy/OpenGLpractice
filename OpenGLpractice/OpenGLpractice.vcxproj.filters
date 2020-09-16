@@ -45,4 +45,8 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="basicshader.vert" />
+    <None Include="basicshader.frag" />
+  </ItemGroup>
 </Project>
