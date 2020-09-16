@@ -11,6 +11,10 @@ Shader::Shader(const std::string& vertexfilename, const std::string& fragmentfil
 	GLuint fragmentShader = ReadShader(fragmentfilename, GL_FRAGMENT_SHADER);
 	glAttachShader(handle, vertexShader);
 	glAttachShader(handle, fragmentShader);
+	//bind attribute locations
+	glBindAttribLocation(handle, 0, "position");
+	glBindAttribLocation(handle, 1, "normal");
+	glBindAttribLocation(handle, 2, "texcoords");
 	glLinkProgram(handle);
 	GLint sucess = 0;
 	glGetProgramiv(handle, GL_LINK_STATUS, &sucess);
