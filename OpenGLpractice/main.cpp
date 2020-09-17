@@ -11,7 +11,11 @@ void ErrorReport(int error, const char* description);
 int main(int* argc, char* argv)
 {
 	//initialise glfw
-	glfwInit();
+	if (glfwInit() != GLFW_TRUE)
+	{
+		std::cerr << "GLFW initialisation failed. Exiting!" << std::endl;
+		return 0;
+	}
 	glfwSetErrorCallback(ErrorReport);
 	std::cout << "hello world" << std::endl;
 	GLwindow theWindow(800, 600, "hello world");
