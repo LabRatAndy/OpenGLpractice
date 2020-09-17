@@ -14,10 +14,10 @@ int main(int* argc, char* argv)
 	glfwInit();
 	glfwSetErrorCallback(ErrorReport);
 	std::cout << "hello world" << std::endl;
+	GLwindow theWindow(800, 600, "hello world");
 	Vertex vertices[] = { Vertex(glm::vec3(-0.5,-0.5,0.0)),Vertex(glm::vec3(0.0,0.5,0.0)),Vertex(glm::vec3(0.5,-0.5,0.0)) };
 	Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]));
 	Shader shader("basicshader.vert", "basicshader.frag");
-	GLwindow theWindow(800, 600, "hello world");
 	while (!theWindow.GetWindowClosing())
 	{
 		glfwPollEvents();
