@@ -11,6 +11,7 @@ public:
 
 	bool inline GetWindowClosing() { return windowgclosing; };
 	void Clear(const unsigned char red, const unsigned char green, const unsigned char blue, const unsigned char alpah);
+	void Clear(const float red, const float green, const float blue, const float alpha);
 	void UpdateWindow();
 	void Swapbuffer();
 private:

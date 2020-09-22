@@ -25,7 +25,7 @@ int main(int* argc, char* argv)
 	while (!theWindow.GetWindowClosing())
 	{
 		glfwPollEvents();
-		theWindow.Clear(0, 150, 50, 255);
+		theWindow.Clear(0.0f, 0.45f, 1.0f, 1.0f);
 		shader.Use();
 		mesh.Draw();
 		theWindow.UpdateWindow();
