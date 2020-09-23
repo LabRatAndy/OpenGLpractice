@@ -62,14 +62,14 @@ static GLuint ReadShader(const std::string& filename, GLenum shaderType)
 	}
 	std::string source, line;
 	std::ifstream input;
-	input.open(filename);
-	if (input.is_open())
+	input.open((filename).c_str());
+	if (!input.is_open())
 	{
 		std::cerr << "unable to open shader source file: " << filename << std::endl;
 		glDeleteShader(handle);
 		return 0;
 	}
-	while (!input.good())
+	while (input.good())
 	{
 		std::getline(input, line);
 		source.append(line + "/n");
@@ -77,19 +77,16 @@ static GLuint ReadShader(const std::string& filename, GLenum shaderType)
 	input.close();
 	const GLchar* shaderSource[1];
 	GLint shaderSourceLength[1];
-	std::cerr << "Source:" << source << std::endl;
 	shaderSource[0] = source.c_str();
 	shaderSourceLength[0] = source.length();
 	glShaderSource(handle, 1, shaderSource, shaderSourceLength);
 	glCompileShader(handle);
 	GLint sucess = 0;
 	glGetShaderiv(handle, GL_COMPILE_STATUS, &sucess);
-	std::cerr << "sucess value is: " << sucess << std::endl;
 	if (sucess != 0)
 	{
 		GLint loglength;
 		glGetShaderiv(handle, GL_INFO_LOG_LENGTH, &loglength);
-		std::cerr << "Log length = " << loglength;
 		GLchar* errormsg;
 		errormsg = (GLchar*)std::malloc(loglength);
 		glGetShaderInfoLog(handle, loglength, NULL, errormsg);
