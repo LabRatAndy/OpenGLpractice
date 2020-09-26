@@ -1,6 +1,6 @@
 #version 330
-out vec4 color;
+layout(location =0) out vec4 Colour;
 void main()
 {
-	color = vec4(1.0, 0.0, 0.0, 1.0);
+	Colour = vec4(1.0, 0.0, 0.0, 1.0);
 }
