@@ -150,7 +150,6 @@ copy *.vert $(SolutionDir)$(Configuration)\</Command>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mesh.cpp" />
     <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="Vertex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GLwindow.h" />
