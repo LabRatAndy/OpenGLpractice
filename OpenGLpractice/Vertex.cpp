@@ -1,5 +1,5 @@
-#include "Vertex.h"
-Vertex::Vertex(const glm::vec3 position)
+//#include "Vertex.h"
+/* Vertex::Vertex(const glm::vec3 position)
 {
 	Position = position;
 	Normal = glm::vec3();
@@ -44,4 +44,4 @@ void Vertex::SetNormal(const glm::vec3 normal)
 void Vertex::SetTexCoords(const glm::vec2 texcoords)
 {
 	this->TexCoords = texcoords;
-}
+}*/
